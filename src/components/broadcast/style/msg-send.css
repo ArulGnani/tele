@@ -1,0 +1,25 @@
+
+.send-msg{
+    width: 100%;
+}
+.send-msg > input{
+    width: 70%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.send-msg > button{
+    padding: 10px;
+    font-size: 15px;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid white;
+    color: black;
+}
+
+.send-msg > button:hover{
+    background: transparent;
+    color: white;
+}

@@ -1,0 +1,34 @@
+.main-comp {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+    background: #101631;
+}
+
+.ele {
+    background: #101631;
+    padding: 20px;
+    margin-bottom: 5px;
+    border: 2px solid #101631;
+}
+
+.ele:hover{
+    border: 2px solid white;
+    border-radius: 10px;
+    background: white;
+}
+.ele > a:hover{
+    color: #101631;
+}
+
+.ele > a{
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    margin-bottom: 20px;
+}

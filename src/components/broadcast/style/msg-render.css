@@ -1,0 +1,30 @@
+
+
+#render-msg{
+    padding: 10px;
+    height: 90vh;
+    overflow-y: auto;
+}
+
+#render-msg::-webkit-scrollbar{
+    display: none;
+}
+
+.msg{
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    padding: 5px;
+    background: rgb(108, 108, 231);
+    border-radius: 10px;
+}
+
+.msg > p {
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.msg > span{
+    margin-left: 10px;
+}

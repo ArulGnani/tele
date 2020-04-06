@@ -1,0 +1,65 @@
+
+#comp{
+    background: #101631;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.create-comp{
+    border: 2px solid white;
+    padding: 50px 30px;
+    border-radius: 10px;
+    background: white;
+}
+
+.create-comp > div {
+    margin-bottom: 10px;    
+}
+
+.create-comp > div > input {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px solid #101631;
+}
+
+.create-comp > div > label {
+    text-align: center;
+    margin-left: 30px;
+    font-size: 20px;
+    color: #101631;
+    margin-right: 20px;
+}
+
+.create-comp > div > label > option {
+    font-size: 20px;
+}
+
+.create-comp button{
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 2px solid #101631;
+    padding: 10px 20px;
+}
+
+.create-comp button:hover{
+    background: #101631;
+    color: white;
+}
+
+.err {
+    margin-bottom: 10px;
+}
+
+.normal {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
