@@ -14,7 +14,7 @@ const LoginPage = () => {
     const loginUser = () => {
         if (roomName !== "" && password !== ""){
             setLoading(true)
-            fetch("http://localhost:5000/api/room-admin-login",{
+            fetch("https://tele-backend.herokuapp.com/api/room-admin-login",{
                 method : "POST",
                 headers : {
                     "Content-Type" : "application/json",

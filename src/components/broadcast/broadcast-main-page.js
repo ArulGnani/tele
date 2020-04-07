@@ -14,6 +14,7 @@ const BroadCast = () => {
         if (key === "ca243$%AC#ADF" && roomName !== ""){
             setAutherised("true")
         }else{  
+            setLogout(true)
             setAutherised("false")
         }
     },[])

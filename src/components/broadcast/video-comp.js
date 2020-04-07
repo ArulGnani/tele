@@ -119,7 +119,7 @@ class Video extends Component {
     updateDB = () => {
         let roomID = sessionStorage.getItem("roomID")
         if (roomID !== ""){
-            fetch(`http://locahost:5000/api/room-broadcast-start/${roomID}`,{
+            fetch(`https://tele-backend.herokuapp.com/api/room-broadcast-start/${roomID}`,{
                 method : "GET",
                 headers : { "Accept" : "application/json" }
             })
@@ -141,7 +141,7 @@ class Video extends Component {
     logout = () => {
         let roomID = sessionStorage.getItem("roomID")
         if (roomID !== ""){
-            fetch(`http://localhost:5000/api/room-admin-logout/${roomID}`,{
+            fetch(`https://tele-backend.herokuapp.com/api/room-admin-logout/${roomID}`,{
                 method :"GET",
                 headers : { "Accept" : "application/json" }
             })

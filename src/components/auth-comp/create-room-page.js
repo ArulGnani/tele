@@ -62,7 +62,7 @@ const CreateRoom = () => {
                 adminPassword : adminPassword
             }   
             console.log(createRoomObj)
-            fetch("http://localhost:5000/api/create-room",{
+            fetch("https://tele-backend.herokuapp.com/api/create-room",{
                 method : "POST",
                 headers : {
                     "Content-Type" : "application/json",
