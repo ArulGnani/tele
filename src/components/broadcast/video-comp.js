@@ -77,11 +77,17 @@ class Video extends Component {
             console.log(`${id} offline`)
             this.peerConnections[id] && this.peerConnections[id].close()
             delete this.peerConnections[id]
+        })  
+
+        socket.on("refreshed",msg => {
+            console.log(msg)
         })
     }
 
     start = () => {
         let videoElemenet = document.getElementById("video")
+        let roomName = sessionStorage.getItem("roomName")
+        socket.emit("refresh-room",roomName)
         this.videoStream = navigator.mediaDevices.getDisplayMedia({
             video : { cursor : "always" },
             audio : true
@@ -99,8 +105,9 @@ class Video extends Component {
     goLive = () => {
         console.log("going live...")
         if (this.state.onLive === false){
-            socket.emit("broadcaster")
+            this.setState({onLive : true})
             let roomName = sessionStorage.getItem("roomName")
+            socket.emit("broadcaster",roomName)
             let msg = {msg:"on live",sender:"admin",room : roomName}
             socket.emit("live-msg",msg)
             this.updateDB()
@@ -114,10 +121,7 @@ class Video extends Component {
         if (roomID !== ""){
             fetch(`http://locahost:5000/api/room-broadcast-start/${roomID}`,{
                 method : "GET",
-                headers : {
-                    "Content-Type" : "application/json",
-                    "Accept" : "application/json"
-                }
+                headers : { "Accept" : "application/json" }
             })
             .then(res => res.json())
             .then(data => console.log(data))
@@ -127,6 +131,7 @@ class Video extends Component {
 
     stop = () => {
         console.log("stoped live steaming...")
+        this.setState({onLive : false})
         this.videoStream.getTracks().forEach(track => {
             track.stop()
         })
